@@ -1,0 +1,92 @@
+.footer {
+  background: var(--text);
+  color: rgba(255, 255, 255, 0.75);
+  padding-top: var(--space-xl);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.footer__logo {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--white);
+  margin-bottom: var(--space-md);
+}
+
+.footer__logo span {
+  color: var(--blue);
+}
+
+.footer__brand p {
+  max-width: 300px;
+}
+
+.footer__col h3 {
+  position: relative;
+  font-size: 1rem;
+  color: var(--white);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+}
+
+.footer__col h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 32px;
+  height: 3px;
+  background: var(--green);
+  border-radius: 2px;
+}
+
+.footer__col ul {
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.footer__col a {
+  transition: color 0.2s;
+}
+
+.footer__col a:hover {
+  color: var(--green-light);
+}
+
+.footer__bottom {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Tablet: brand on top, three columns below */
+@media (min-width: 600px) {
+  .footer__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Desktop: four columns */
+@media (min-width: 1000px) {
+  .footer__grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: var(--space-xl);
+  }
+
+  .footer__brand {
+    grid-column: auto;
+  }
+}

@@ -1,0 +1,98 @@
+.page-header {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: var(--space-xl) 0 calc(var(--space-xl) + 40px);
+}
+
+/* Large translucent circle, top right */
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -100px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Dot grid, bottom left */
+.page-header__dots {
+  position: absolute;
+  left: 20px;
+  bottom: 50px;
+  width: 140px;
+  height: 100px;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.35) 2px,
+    transparent 2px
+  );
+  background-size: 18px 18px;
+}
+
+.page-header__content {
+  position: relative;
+}
+
+.page-header__breadcrumb {
+  display: inline-flex;
+  gap: var(--space-sm);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-md);
+  padding: 0.35rem 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+}
+
+.page-header__breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.page-header__breadcrumb .current {
+  font-weight: 600;
+}
+
+.page-header h1 {
+  color: var(--white);
+  margin-bottom: var(--space-sm);
+}
+
+.page-header p {
+  max-width: 520px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Wave edge, colored to match the page background */
+.page-header__wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  color: var(--white);
+}
+
+@media (min-width: 768px) {
+  .page-header {
+    padding: 5rem 0 calc(5rem + 40px);
+  }
+
+  .page-header__wave {
+    height: 70px;
+  }
+
+  .page-header::before {
+    width: 420px;
+    height: 420px;
+  }
+
+  .page-header__dots {
+    left: 8%;
+    width: 180px;
+    height: 120px;
+  }
+}

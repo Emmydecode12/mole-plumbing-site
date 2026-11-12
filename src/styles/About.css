@@ -1,0 +1,129 @@
+/* ---------- Our Story ---------- */
+.story__inner {
+  display: grid;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+/* On mobile the image shows first */
+.story__image {
+  order: -1;
+}
+
+.story__image img,
+.founder__image img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 16px;
+  background: var(--green-light);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.story__content .section-label,
+.founder__content .section-label {
+  text-align: left;
+}
+
+.story__content h2 {
+  margin-bottom: var(--space-md);
+}
+
+.story__content p {
+  color: var(--text-light);
+  margin-bottom: var(--space-md);
+}
+
+.story__stats {
+  display: flex;
+  gap: var(--space-xl);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--green-light);
+}
+
+.story__stats strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--green);
+  line-height: 1.2;
+}
+
+.story__stats span {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* ---------- Values ---------- */
+.values {
+  background: var(--green-light);
+}
+
+.values__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+/* ---------- Founder ---------- */
+.founder__inner {
+  display: grid;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.founder__content h2 {
+  margin-bottom: 0.25rem;
+}
+
+.founder__role {
+  color: var(--green);
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+}
+
+.founder__bio {
+  color: var(--text-light);
+  margin-bottom: var(--space-lg);
+}
+
+.founder__quote {
+  border-left: 4px solid var(--green);
+  background: var(--green-light);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: 0 10px 10px 0;
+  font-style: italic;
+  margin-bottom: var(--space-lg);
+}
+
+/* ---------- Tablet ---------- */
+@media (min-width: 600px) {
+  .values__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Desktop ---------- */
+@media (min-width: 900px) {
+  .story__inner,
+  .founder__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .story__image {
+    order: 0;
+  }
+
+  .story__image img,
+  .founder__image img {
+    height: 450px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .values__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
